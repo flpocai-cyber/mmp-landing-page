@@ -161,9 +161,15 @@
 
 .service-icon img {
   width: 100%;
-  max-width: 240px; /* Alinhado ao 3x maior */
+  max-width: 240px;
   height: auto;
   object-fit: contain;
+  transition: all 0.4s ease;
+}
+
+.service-card:hover .service-icon img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 25px rgba(238, 43, 41, 0.8));
 }
 
 .service-card {
