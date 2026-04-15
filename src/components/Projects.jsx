@@ -18,11 +18,7 @@ export default function Clients() {
 
       <div className="marquee-wrapper" style={{ position: 'relative', width: '100%' }}>
         <div className="marquee-container" style={{ margin: 0, paddingBottom: '2rem' }}>
-          <div className="marquee-track" style={{ 
-            animation: 'marquee 22s linear infinite', 
-            gap: '0', 
-            display: 'flex' 
-          }}>
+          <div className="marquee-track clients-track">
             {/* Duplicamos a imagem da faixa de clientes para loop infinito */}
             <img 
               src="/clientestransp.png" 

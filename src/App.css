@@ -401,3 +401,15 @@
   0% { transform: translateX(0%); }
   100% { transform: translateX(-33.33%); }
 }
+
+.clients-track {
+  animation: marquee 25s linear infinite;
+  display: flex;
+  gap: 0;
+}
+
+@media (max-width: 768px) {
+  .clients-track {
+    animation-duration: 4.5s; /* 5x mais rápido que o anterior no mobile */
+  }
+}
