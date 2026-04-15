@@ -19,7 +19,7 @@ export default function Clients() {
       <div className="marquee-wrapper" style={{ position: 'relative', width: '100%' }}>
         <div className="marquee-container" style={{ margin: 0, paddingBottom: '2rem' }}>
           <div className="marquee-track" style={{ 
-            animationDuration: '45s', 
+            animation: 'marquee 45s linear infinite', 
             gap: '0', 
             display: 'flex' 
           }}>
