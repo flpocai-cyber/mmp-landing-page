@@ -12,8 +12,15 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const videoRef = useRef(null);
   const heroRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     const video = videoRef.current;
     if (!video) return;
 
@@ -32,8 +39,11 @@ function App() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, [isMobile]); // Reinicia para garantir playbackRate no novo video
 
   return (
     <>
@@ -46,8 +56,9 @@ function App() {
         <section id="inicio" className="hero hero-scroll" ref={heroRef} style={{ overflow: 'hidden' }}>
           {/* Vídeo de fundo cobrindo 100% */}
           <video
+            key={isMobile ? 'mobile' : 'desktop'}
             ref={videoRef}
-            src="/2.mp4"
+            src={isMobile ? "/mmpmobile.mp4" : "/2.mp4"}
             className="hero-video-bg"
             muted
             playsInline
