@@ -1,0 +1,83 @@
+.testimonials-section {
+  padding: 6rem 0;
+  background-color: var(--color-bg);
+  overflow: hidden;
+}
+
+.marquee-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  margin-top: 3rem;
+  padding: 1rem 0;
+}
+
+/* Duplicando o track para rolar infinitamente */
+.marquee-track {
+  display: flex;
+  gap: 2rem;
+  animation: marquee 35s linear infinite;
+  white-space: nowrap;
+  /* Largura total dependente do tamanho do conteúdo */
+  width: max-content;
+}
+
+/* Efeito de pausa no hover opcional */
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.testimonial-card {
+  background-color: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  min-width: 380px; /* Largura fixa para manter as caixas uniformes no carrossel */
+  white-space: normal; /* Sobrescreve o pai para permitir quebra de linha no texto */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); } 
+  /* Nota: O -50% funciona perfeitamente pois vamos duplicar os itens no array React! */
+}
+
+/* Adiciona um efeito de fade/sombra nas bordas direita e esquerda para parecer que entram na página */
+.marquee-wrapper {
+  position: relative;
+  max-width: 100%;
+}
+
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-bg) 0%, transparent 100%);
+}
+
+.marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-bg) 0%, transparent 100%);
+}
+
+@media (max-width: 768px) {
+  .testimonial-card {
+    min-width: 320px;
+    padding: 2rem;
+  }
+}
