@@ -403,7 +403,7 @@
 }
 
 .clients-track {
-  animation: marquee 25s linear infinite;
+  animation: marquee 40s linear infinite;
   display: flex;
   width: max-content;
   will-change: transform;
@@ -415,6 +415,6 @@
 
 @media (max-width: 768px) {
   .clients-track {
-    animation-duration: 4.5s; /* 5x mais rápido que o anterior no mobile */
+    animation-duration: 15s; 
   }
 }
