@@ -399,14 +399,18 @@
 /* GLOBAL ANIMATIONS */
 @keyframes marquee {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-25%); } 
+  100% { transform: translateX(-50%); } 
 }
 
 .clients-track {
   animation: marquee 25s linear infinite;
   display: flex;
-  gap: 0;
+  width: max-content;
   will-change: transform;
+}
+
+.clients-track img {
+  flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
