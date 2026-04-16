@@ -398,14 +398,15 @@
 
 /* GLOBAL ANIMATIONS */
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-33.33%); }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-25%); } 
 }
 
 .clients-track {
   animation: marquee 25s linear infinite;
   display: flex;
   gap: 0;
+  will-change: transform;
 }
 
 @media (max-width: 768px) {

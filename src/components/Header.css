@@ -88,15 +88,25 @@
 
 @media (max-width: 768px) {
   .desktop-nav {
-    display: none;
+    display: flex;
+    gap: 0.8rem; /* Gap reduzido para caber */
+  }
+  .nav-link {
+    font-size: 0.75rem; /* Fonte menor */
   }
   .sm-hidden {
     display: none;
   }
   .header-container {
-    padding: 0 1.5rem;
+    padding: 0 1rem;
+    justify-content: center; /* Centraliza no mobile se necessário */
+    gap: 1rem;
+  }
+  .header {
+    height: 65px;
+    top: 5px;
   }
   .logo-img {
-    height: 50px;
+    height: 35px;
   }
 }

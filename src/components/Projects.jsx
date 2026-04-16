@@ -35,6 +35,11 @@ export default function Clients() {
               alt="Nossos Clientes" 
               style={{ height: '140px', width: 'auto', display: 'block' }} 
             />
+            <img 
+              src="/clientestransp.png" 
+              alt="Nossos Clientes" 
+              style={{ height: '140px', width: 'auto', display: 'block' }} 
+            />
           </div>
         </div>
       </div>
